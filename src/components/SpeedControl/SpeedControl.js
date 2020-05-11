@@ -14,12 +14,12 @@ class SpeedControl extends Component {
       this.setState({
         speed: this.state.speed + 1
       })
-      this.props.dispatch({type:'increase', payload:1})
+      this.props.dispatch({type:'increase', payload: this.state.speed + 1})
     } else if(property === 'decrease'){
         this.setState({
           speed: this.state.speed - 1
         })
-        this.props.dispatch({type:'decrease', payload:1})
+        this.props.dispatch({type:'decrease', payload: this.state.speed - 1})
     }
   }
 
@@ -29,7 +29,7 @@ class SpeedControl extends Component {
         <h2>Speed Control</h2>
 
         <button onClick ={(event => this.clickHandler(event, 'increase'))}>Increase Speed</button>
-        <p>SPEED: {this.state.speed}</p>
+        <p>SPEED: {this.props.reduxState.speed}</p>
         <button onClick ={(event => this.clickHandler(event, 'decrease'))}>Decrease Speed</button>
       </div>
     )

@@ -30,9 +30,9 @@ class App extends Component {
             </header>
 
             <div className="content-container">
-              <Route exact path="/" render={(props) => <SpeedControl {...props} dispatch={this.props.dispatch}/>}/>
+              <Route exact path="/" render={(props) => <SpeedControl {...props} dispatch={this.props.dispatch} reduxState={this.props.reduxState}/>}/>
               <Route path="/passengers" component={Passengers} />
-              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/dashboard" render={(props) => <Dashboard {...props} reduxState={this.props.reduxState}/>}/>
             </div>
 
           </div>
