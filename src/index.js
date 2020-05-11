@@ -17,6 +17,9 @@ const firstReducer = (state = firstReducerInitialState, action) => {
     } else if (action.type === 'decrease'){
         console.log('decrease by', action.payload);
         state = {...state, speed: action.payload}
+    } else if (action.type === 'passengers'){
+        console.log('passenger total:', action.payload);
+        state = {...state, passengers: action.payload}
     }
     return state;
 }

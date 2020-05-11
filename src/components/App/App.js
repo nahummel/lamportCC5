@@ -31,7 +31,7 @@ class App extends Component {
 
             <div className="content-container">
               <Route exact path="/" render={(props) => <SpeedControl {...props} dispatch={this.props.dispatch} reduxState={this.props.reduxState}/>}/>
-              <Route path="/passengers" component={Passengers} />
+              <Route path="/passengers" render={(props) => <Passengers {...props} dispatch={this.props.dispatch}/>}/>
               <Route path="/dashboard" render={(props) => <Dashboard {...props} reduxState={this.props.reduxState}/>}/>
             </div>
 

@@ -15,11 +15,10 @@ class Passengers extends Component {
 
   clickHandler = () => {
     console.log('in clickHandler for passengers')
-    console.log(this.state.passenger);
     this.setState({
       passengers: [...this.state.passengers, this.state.passenger]
     })
-    console.log(this.state.passengers)
+    this.props.dispatch({type:'passengers', payload: this.state.passengers.length + 1})
   }
 
   handleChange = (event, property) => {
